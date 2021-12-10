@@ -16,7 +16,7 @@ def test():
     time.sleep(3)
     result = driver.find_element(By.CSS_SELECTOR, 'div.product-card__content').text
 
-    assert result.lower().__contains__(search_word.lower()), 'Error, the search word does not match the result'
+    assert search_word.lower() in result.lower(), 'Error, the search word does not match the result'
 
     driver.quit()
 
