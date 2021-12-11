@@ -7,18 +7,18 @@ class User(HttpUser):
 
 
     @task(1)
-    def getUser(self):
+    def GetUser(self):
         self.client.get("/users/6")
 
     @task(2)
-    def addUser(self):
+    def AddUser(self):
         self.client.post("/users", json={
             "email": "eve.holt@reqres.in",
             "password": "cityslicka"
         })
 
     @task(1)
-    def updateUser(self):
+    def UpdateUser(self):
         self.client.patch("/users", json={
             "email": "eve.holt@reqres.in",
             "password": "cityslicka45343"
@@ -39,5 +39,5 @@ class User(HttpUser):
         })
 
     @task(1)
-    def deleteUser(self):
+    def DeleteUser(self):
         self.client.delete("/users/6")
